@@ -11,7 +11,7 @@ const Sidebar = () => {
   const router = useRouter();
   return (
     <section
-      className={`fixed transition-all top-0 left-0 right-0 bottom-0 w-screen px-10 py-12 flex flex-col items-center gap-10 bg-black bg-opacity-95 ${
+      className={`fixed transition-all top-0 z-40 left-0 right-0 bottom-0 w-screen px-10 py-12 flex flex-col items-center gap-10 bg-black bg-opacity-95 ${
         open ? "translate-x-0" : "-translate-x-full"
       }`}
     >
