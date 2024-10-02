@@ -63,8 +63,8 @@ const Projects = () => {
                     <CldImage
                       src={item.image}
                       alt={"image"}
-                      width={400}
-                      height={400}
+                      width={1400}
+                      height={1400}
                       className='object-cover w-full h-full  rounded-md'
                     />
                     <div className='project absolute top-0 left-0 right-0 bottom-0 hidden bg-black bg-opacity-90  place-content-center'>
@@ -101,7 +101,7 @@ const Projects = () => {
         </div>
 
         {/* Mobile video */}
-        <div className='my-9 grid grid-cols-1 md:grid-cols-2 items-center md:hidden  justify-center gap-7 w-full min-h-screen'>
+        <div className='my-9 px-4 grid grid-cols-1 md:grid-cols-2 items-center md:hidden  justify-center gap-7 w-full min-h-screen'>
           {data?.data.projects.map(
             (item: { _id: string; name: string; image: string }) => {
               return (
@@ -112,20 +112,13 @@ const Projects = () => {
                   <CldImage
                     src={item.image}
                     alt={"image"}
-                    width={400}
-                    height={400}
-                    className='object-cover w-full h-full  rounded-md'
+                    width={1400}
+                    height={1400}
+                    onClick={() => {
+                      router.push(`/projects/${item._id}`);
+                    }}
+                    className='cursor-pointer object-cover w-full h-full  rounded-md'
                   />
-                  <div className='absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70  place-content-center'>
-                    <p
-                      className='hover:underline  uppercase text-white text-3xl text-center font-bold cursor-pointer'
-                      onClick={() => {
-                        router.push(`/projects/${item._id}`);
-                      }}
-                    >
-                      {item.name}
-                    </p>
-                  </div>
                 </div>
               );
             }

@@ -1,29 +1,27 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
-import { FaAlignCenter, FaAlignJustify } from "react-icons/fa";
+import { FaRegTimesCircle, FaTimesCircle } from "react-icons/fa";
 
-const Navbar = () => {
+const Sidebar = () => {
   const pathname = usePathname();
+  const open = useSearchParams().get("open");
+  console.log(open);
   const router = useRouter();
   return (
-    <header className=' flex items-center justify-between gap-8 md:px-5  text-white  px-5 py-8 mx-auto  max-w-7xl '>
-      <h3
-        className='text-2xl font-bold uppercase'
+    <section
+      className={`fixed transition-all top-0 left-0 right-0 bottom-0 w-screen px-10 py-12 flex flex-col items-center gap-10 bg-black bg-opacity-95 ${
+        open ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      <FaRegTimesCircle
+        className='hover:text-blue-700 text-4xl text-white self-end'
         onClick={() => {
-          router.push("/");
-        }}
-      >
-        FASH
-      </h3>
-      <FaAlignJustify
-        className='text-2xl md:hidden block'
-        onClick={() => {
-          router.push(`${pathname}?open=true`);
+          router.back();
         }}
       />
-      <ul className='md:flex md:gap-8 items-center justify-between lg:gap-12 text-xl  hidden'>
+      <ul className='flex flex-col  items-center justify-between gap-12 text-xl  text-white'>
         <li
           className={`font-medium hover:border-b-2 border-blue-800 ${
             pathname === "/" && "border-b-2 "
@@ -53,8 +51,8 @@ const Navbar = () => {
           <Link href={"/contact"}>Contact</Link>
         </li>
       </ul>
-    </header>
+    </section>
   );
 };
 
-export default Navbar;
+export default Sidebar;

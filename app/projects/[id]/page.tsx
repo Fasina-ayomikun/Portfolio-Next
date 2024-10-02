@@ -35,9 +35,9 @@ const SingleProject = ({ params }: { params: { id: string } }) => {
         <CldImage
           src={data?.data.project.image}
           alt={"image"}
-          width={400}
-          height={400}
-          className='w-full h-96  rounded-md'
+          width={1400}
+          height={1400}
+          className='object-cover w-full h-96  rounded-md'
         />
         <div className='w-full'>
           <h1 className='text-3xl font-bold uppercase  text-white tracking-wide'>
