@@ -47,11 +47,11 @@ const SingleProject = ({ params }: { params: { id: string } }) => {
           <p className='text-gray-200 my-4'>{data?.data.project.description}</p>
           <hr className='border-dashed my-5' />
           <p className='flex items-start justify-start md:justify-between gap-2 md:gap-5 my-4 text-white text-sm'>
-            <span>Preview</span>
+            <span>Github</span>
             <Link
               href={data?.data.project.github_link}
               target='/blank'
-              className='text-xs break-all'
+              className='text-xs break-all underline hover:text-blue-500'
             >
               {data?.data.project.github_link}
             </Link>
@@ -62,9 +62,9 @@ const SingleProject = ({ params }: { params: { id: string } }) => {
             <Link
               href={data?.data.project.preview_link}
               target='/blank'
-              className='text-xs break-all'
+              className='text-xs break-all underline  hover:text-blue-500'
             >
-              {data?.data.project.preview_link}lorem30
+              {data?.data.project.preview_link}
             </Link>
           </p>
         </div>

@@ -9,7 +9,7 @@
 
 .background {
   background: radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
-    url('/assets/hero.png') no-repeat;
+    url('/assets/hero.jpg') no-repeat;
   background-position: center;
   background-size: cover;
 

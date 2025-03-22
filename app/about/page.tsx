@@ -40,12 +40,11 @@ const About = () => {
           </p>
           <hr className='border-dashed my-8' />
           <p className='text-gray-200 my-4'>
-            I am a self taught frontend developer, a lady working towards
-            significant self development, a passionate and dedicated web
-            developer and Youtuber. I am currently skilled in HTML,CSS,
-            JavaScript, React and some other frontend frameworks. I am working
-            towards incremental knowledge and skill acquisition in web
-            development and other interesting programming languages.
+            Hi, I'm Fasina Ayomikun, a frontend developer with over 4 years of
+            experience working with modern web technologies. I’m passionate
+            about continuous learning, content creation, and sharing knowledge
+            through YouTube. As a tech influencer and a problem solver, I love
+            decoding bugs and building user-friendly experiences.{" "}
           </p>
           <p className='text-gray-200 my-4'>
             <strong>Skills: </strong>
@@ -57,7 +56,9 @@ const About = () => {
             onClick={() => handleCopyToClipboard(email)}
           >
             <strong>Email: </strong>
-            <span>ayomikunfasina240@gmail.com</span>
+            <span className='underline underline-offset-4 hover:text-blue-500'>
+              ayomikunfasina240@gmail.com
+            </span>
           </p>
         </div>
       </section>
