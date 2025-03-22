@@ -6,6 +6,7 @@ import axios from "axios";
 import { CldImage } from "next-cloudinary";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import {
   FaGithub,
@@ -25,13 +26,21 @@ const SingleProject = ({ params }: { params: { id: string } }) => {
       return resp;
     },
   });
-
+  const router = useRouter();
   if (isLoading) {
     return <Loading />;
   }
   return (
     <section className='px-3'>
-      <section className=' w-full h-full md:h-[79vh] grid grid-cols-1 md:grid-cols-2  justify-center items-center mx-auto max-w-6xl gap-10'>
+      <p
+        onClick={() => {
+          router.back();
+        }}
+        className='text-sm cursor-pointer mb-0 underline text-white  max-w-6xl mx-auto hover:text-blue-500'
+      >
+        &lt;&lt;&lt; Back
+      </p>
+      <section className=' w-full h-full md:h-[76vh] grid grid-cols-1 md:grid-cols-2  justify-center items-center mx-auto max-w-6xl gap-10'>
         <CldImage
           src={data?.data.project.image}
           alt={"image"}
