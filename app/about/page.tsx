@@ -3,14 +3,8 @@ import SocialLinks from "@/components/SocialLinks";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  FaGithub,
-  FaGithubAlt,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
+
 const email = "ayomikunfasina240@gmail.com";
 const About = () => {
   const handleCopyToClipboard = async (value: string) => {
@@ -22,7 +16,28 @@ const About = () => {
     }
   };
   return (
-    <section className='px-5'>
+    <motion.section
+      className='px-5'
+      exit={{
+        translateX: "-100vw",
+        transition: {
+          ease: "easeInOut",
+          duration: 5,
+        },
+      }}
+      initial={{
+        x: "100vw",
+      }}
+      animate={{
+        x: 0,
+      }}
+      transition={{
+        ease: "easeIn",
+        duration: 0.5,
+        damping: 15,
+        type: "spring",
+      }}
+    >
       <section className='w-full h-full md:h-[79vh] grid grid-cols-1 md:grid-cols-2 justify-center items-center mx-auto max-w-6xl gap-10'>
         <Image
           src={"/assets/profile2.jpg"}
@@ -63,7 +78,7 @@ const About = () => {
         </div>
       </section>
       <SocialLinks />
-    </section>
+    </motion.section>
   );
 };
 

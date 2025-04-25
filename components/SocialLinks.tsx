@@ -8,7 +8,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 const SocialLinks = () => {
   return (
     <ul className='text-white h-full flex items-center justify-center gap-4 text-xl  md:text-3xl pb-4'>

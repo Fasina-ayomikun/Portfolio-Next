@@ -4,7 +4,7 @@ import SocialLinks from "@/components/SocialLinks";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-
+import { motion } from "framer-motion";
 const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [value, setValue] = useState({
@@ -47,47 +47,96 @@ const Contact = () => {
       );
   };
   return (
-    <section>
+    <motion.section
+      initial={{
+        x: "100vw",
+      }}
+      animate={{
+        x: 0,
+      }}
+      transition={{
+        ease: "easeIn",
+        duration: 0.5,
+        damping: 15,
+        type: "spring",
+      }}
+    >
       <section className='w-full h-[79vh] grid   items-center mx-auto max-w-6xl '>
         <form onSubmit={sendEmail} className='w-10/12 mx-auto'>
-          <input
+          <motion.input
+            whileHover={{
+              borderStyle: "dashed",
+              transition: {
+                ease: "easeIn",
+              },
+            }}
             name='user_name'
             type='text'
             required
             value={value.user_name}
             placeholder='Name'
             onChange={handleChange}
-            className='border border-white my-4 px-4 w-full py-3 text-white bg-transparent'
+            className='border cursor-pointer border-white my-4 px-4 w-full py-3 text-white bg-transparent'
           />
-          <input
+          <motion.input
+            whileHover={{
+              borderStyle: "dashed",
+              transition: {
+                ease: "easeIn",
+              },
+            }}
             value={value.user_email}
             onChange={handleChange}
             name='user_email'
             type='text'
             required
             placeholder='Email'
-            className='border border-white my-4 px-4 w-full py-3 text-white bg-transparent'
+            className='border cursor-pointer border-white my-4 px-4 w-full py-3 text-white bg-transparent'
           />
-          <textarea
+          <motion.textarea
+            whileHover={{
+              borderStyle: "dashed",
+              transition: {
+                ease: "easeIn",
+              },
+            }}
             value={value.message}
             onChange={handleChange}
             name='message'
             required
             placeholder='Send me a message'
-            className='border border-white min-h-32 my-4 px-4 w-full py-3 text-white bg-transparent'
+            className='border cursor-pointer border-white min-h-32 my-4 px-4 w-full py-3 text-white bg-transparent'
           />
 
-          <button
+          <motion.button
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 1,
+                ease: "easeIn",
+              },
+            }}
+            whileHover={{
+              scale: [0.9, 1, 0.9],
+              transition: {
+                repeat: Infinity,
+                ease: "easeInOut",
+                duration: 0.7,
+              },
+            }}
             type='submit'
             disabled={submitting}
             className='w-fit px-8 md:py-3 py-2 rounded-full bg-blue-800 text-white mx-auto flex text-sm md:text-md'
           >
             {submitting ? "Sending..." : "Send Message"}
-          </button>
+          </motion.button>
         </form>
       </section>
       <SocialLinks />
-    </section>
+    </motion.section>
   );
 };
 

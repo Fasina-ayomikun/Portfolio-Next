@@ -9,14 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {
-  FaGithub,
-  FaGithubAlt,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [endSlice, setEndSlice] = useState(2);
@@ -31,10 +24,50 @@ const Projects = () => {
     },
   });
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className='grid grid-cols-1 md:grid-cols-2 max-w-6xl   mx-auto items-center justify-center gap-7 w-4/5 mt-10  h-full md:h-[79vh]'>
+        <motion.div
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            transition: {
+              ease: "easeInOut",
+              repeat: Infinity,
+              duration: 1,
+            },
+          }}
+          className=' w-full h-80 bg-gray-500 bg-opacity-45 rounded-md'
+        ></motion.div>
+        <motion.div
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            transition: {
+              ease: "easeInOut",
+              repeat: Infinity,
+              duration: 1,
+              delay: 0.2,
+            },
+          }}
+          className=' w-full h-80 bg-gray-500 bg-opacity-45 rounded-md'
+        ></motion.div>
+      </div>
+    );
   }
   return (
-    <section className=''>
+    <motion.section
+      initial={{
+        x: "100vw",
+      }}
+      animate={{
+        x: 0,
+      }}
+      transition={{
+        ease: "easeIn",
+        duration: 0.5,
+        damping: 15,
+        type: "spring",
+      }}
+      className=''
+    >
       <section className='w-full h-full md:h-[79vh] grid  justify-center items-center mx-auto max-w-6xl gap-10'>
         <div className='hidden md:flex items-center justify-center gap-20'>
           <FaChevronLeft
@@ -59,7 +92,17 @@ const Projects = () => {
               .slice(startSlice, endSlice)
               .map((item: { _id: string; name: string; image: string }) => {
                 return (
-                  <div key={item._id} className='relative w-full h-80 projects'>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                      transition: {
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      },
+                    }}
+                    key={item._id}
+                    className='relative w-full h-80 projects'
+                  >
                     <CldImage
                       src={item.image}
                       alt={"image"}
@@ -77,7 +120,7 @@ const Projects = () => {
                         {item.name}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
           </div>
@@ -126,7 +169,7 @@ const Projects = () => {
         </div>
       </section>
       <SocialLinks />
-    </section>
+    </motion.section>
   );
 };
 

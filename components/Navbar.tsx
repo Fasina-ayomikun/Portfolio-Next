@@ -3,20 +3,49 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { FaAlignCenter, FaAlignJustify } from "react-icons/fa";
-
+import { motion, scale } from "framer-motion";
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const headerVariant = {
+    initial: {
+      y: -100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: "easeIn",
+        damping: 25,
+        mass: 4,
+        duration: 0.5,
+        type: "spring",
+        when: "beforeChild",
+      },
+    },
+  };
+  const linkVariant = {
+    whileHover: {
+      scale: 1.1,
+    },
+  };
   return (
-    <header className=' flex items-center justify-between gap-8 md:px-5  text-white  px-5 py-8 mx-auto  max-w-7xl '>
-      <h3
-        className='text-2xl font-bold uppercase'
+    <motion.header
+      variants={headerVariant}
+      animate='animate'
+      initial='initial'
+      className=' flex items-center justify-between gap-8 md:px-5  text-white  px-5 py-8 mx-auto  max-w-7xl '
+    >
+      <motion.h3
+        className='text-2xl font-bold uppercase cursor-pointer'
         onClick={() => {
           router.push("/");
         }}
+        whileHover={{
+          scale: 1.2,
+        }}
       >
         FASH
-      </h3>
+      </motion.h3>
       <FaAlignJustify
         className='text-2xl md:hidden block'
         onClick={() => {
@@ -53,7 +82,7 @@ const Navbar = () => {
           <Link href={"/contact"}>Contact</Link>
         </li>
       </ul>
-    </header>
+    </motion.header>
   );
 };
 
