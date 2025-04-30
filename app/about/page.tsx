@@ -38,7 +38,7 @@ const About = () => {
         type: "spring",
       }}
     >
-      <section className='w-full h-full md:h-[79vh] grid grid-cols-1 md:grid-cols-2 justify-center items-center mx-auto max-w-6xl gap-10'>
+      <section className='w-full h-full md:h-[75vh] grid grid-cols-1 md:grid-cols-2 justify-center items-center mx-auto max-w-6xl gap-10'>
         <Image
           src={"/assets/profile2.jpg"}
           alt={"image"}
@@ -55,11 +55,14 @@ const About = () => {
           </p>
           <hr className='border-dashed my-8' />
           <p className='text-gray-200 my-4'>
-            Hi, I'm Fasina Ayomikun, a frontend developer with over 4 years of
-            experience working with modern web technologies. I’m passionate
+            Hi, I'm Fasina Ayomikun, a frontend developer with close to 4 years
+            of experience working with modern web technologies. I’m passionate
             about continuous learning, content creation, and sharing knowledge
             through YouTube. As a tech influencer and a problem solver, I love
-            decoding bugs and building user-friendly experiences.{" "}
+            decoding bugs and building user-friendly experiences. I’m also the
+            creator of Tech with Deeyah — a personal tech brand where I simplify
+            frontend development, share real-life dev tips, and inspire others
+            to grow in code and in life.
           </p>
           <p className='text-gray-200 my-4'>
             <strong>Skills: </strong>
@@ -77,6 +80,21 @@ const About = () => {
           </p>
         </div>
       </section>
+      <motion.p
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: [1.1, 1, 1.1],
+          transition: {
+            duration: 0.5,
+            repeat: Infinity,
+          },
+        }}
+        className='mb-2 text-center text-sm md:hidden text-gray-200 mt-2'
+      >
+        Swipe left or right to navigate
+      </motion.p>
       <SocialLinks />
     </motion.section>
   );

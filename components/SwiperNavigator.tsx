@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 
-const routes = ["/", "/about", "/projects", "/contact"]; // your route order
+const routes = ["/", "/about", "/services", "/projects", "/contact"]; // your route order
 
 export default function SwipeNavigator({
   children,
