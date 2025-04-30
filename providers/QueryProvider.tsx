@@ -2,6 +2,7 @@
 import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import SwipeNavigator from "@/components/SwiperNavigator";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React, { Suspense } from "react";
 
@@ -10,11 +11,13 @@ const QueryProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Suspense fallback={<Loading />}>
-        <section className='background bg-no-repeat bg-center bg-cover h-full min-h-screen md:h-screen  '>
-          <Navbar />
-          <Sidebar />
-          {children}
-        </section>
+        <SwipeNavigator>
+          <section className='background bg-no-repeat bg-center bg-cover h-full min-h-screen md:h-screen  '>
+            <Navbar />
+            <Sidebar />
+            {children}
+          </section>
+        </SwipeNavigator>
       </Suspense>
     </QueryClientProvider>
   );
