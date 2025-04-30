@@ -61,7 +61,7 @@ const Contact = () => {
         type: "spring",
       }}
     >
-      <section className='w-full h-[79vh] grid   items-center mx-auto max-w-6xl '>
+      <section className='w-full h-[75vh] grid   items-center mx-auto max-w-6xl '>
         <form onSubmit={sendEmail} className='w-10/12 mx-auto'>
           <motion.input
             whileHover={{
@@ -135,6 +135,21 @@ const Contact = () => {
           </motion.button>
         </form>
       </section>
+      <motion.p
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: [1.1, 1, 1.1],
+          transition: {
+            duration: 0.5,
+            repeat: Infinity,
+          },
+        }}
+        className='mb-2 text-center text-sm md:hidden text-gray-200 mt-2'
+      >
+        Swipe left or right to navigate
+      </motion.p>
       <SocialLinks />
     </motion.section>
   );

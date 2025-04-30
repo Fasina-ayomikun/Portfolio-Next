@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  FaChevronRight,
   FaGithub,
   FaGithubAlt,
   FaLinkedin,
@@ -13,6 +14,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 const Home = () => {
   return (
     <AnimatePresence>
@@ -25,7 +27,7 @@ const Home = () => {
           },
         }}
       >
-        <section className='w-full h-[79vh] grid justify-center items-center '>
+        <section className='w-full md:h-[72vh] h-[70vh] grid justify-center items-center '>
           <div className='w-full px-2 md:px-4'>
             <motion.h1
               initial={{ scale: 0 }}
@@ -59,6 +61,21 @@ const Home = () => {
             <Button />
           </div>
         </section>
+        <motion.p
+          initial={{
+            scale: 0,
+          }}
+          animate={{
+            scale: [1.1, 1, 1.1],
+            transition: {
+              duration: 0.5,
+              repeat: Infinity,
+            },
+          }}
+          className='mb-2 text-center text-sm md:hidden text-gray-200 mt-2'
+        >
+          Swipe left or right to navigate
+        </motion.p>
         <SocialLinks />
       </motion.section>
     </AnimatePresence>

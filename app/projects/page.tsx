@@ -68,7 +68,7 @@ const Projects = () => {
       }}
       className=''
     >
-      <section className='w-full h-full md:h-[79vh] grid  justify-center items-center mx-auto max-w-6xl gap-10'>
+      <section className='w-full h-full md:h-[75vh] grid  justify-center items-center mx-auto max-w-6xl gap-10'>
         <div className='hidden md:flex items-center justify-center gap-20'>
           <FaChevronLeft
             className='text-6xl text-white hover:text-blue-700 '
@@ -168,6 +168,21 @@ const Projects = () => {
           )}
         </div>
       </section>
+      <motion.p
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: [1.1, 1, 1.1],
+          transition: {
+            duration: 0.5,
+            repeat: Infinity,
+          },
+        }}
+        className='mb-2 text-center text-sm md:hidden text-gray-200 mt-2'
+      >
+        Swipe left or right to navigate
+      </motion.p>
       <SocialLinks />
     </motion.section>
   );

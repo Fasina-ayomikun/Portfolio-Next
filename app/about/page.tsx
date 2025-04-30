@@ -38,7 +38,7 @@ const About = () => {
         type: "spring",
       }}
     >
-      <section className='w-full h-full md:h-[79vh] grid grid-cols-1 md:grid-cols-2 justify-center items-center mx-auto max-w-6xl gap-10'>
+      <section className='w-full h-full md:h-[75vh] grid grid-cols-1 md:grid-cols-2 justify-center items-center mx-auto max-w-6xl gap-10'>
         <Image
           src={"/assets/profile2.jpg"}
           alt={"image"}
@@ -77,6 +77,21 @@ const About = () => {
           </p>
         </div>
       </section>
+      <motion.p
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: [1.1, 1, 1.1],
+          transition: {
+            duration: 0.5,
+            repeat: Infinity,
+          },
+        }}
+        className='mb-2 text-center text-sm md:hidden text-gray-200 mt-2'
+      >
+        Swipe left or right to navigate
+      </motion.p>
       <SocialLinks />
     </motion.section>
   );
