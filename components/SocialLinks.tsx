@@ -11,7 +11,7 @@ import {
 import { motion } from "framer-motion";
 const SocialLinks = () => {
   return (
-    <ul className='text-white h-full flex items-center justify-center gap-4 text-xl  md:text-3xl pb-4'>
+    <ul className='text-white h-fit  flex items-center justify-center gap-4 text-xl  md:text-3xl pb-4'>
       <Link
         href={"https://www.linkedin.com/in/ayomikun-fasina"}
         target='/blank'

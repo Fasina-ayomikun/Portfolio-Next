@@ -26,9 +26,9 @@ const Button = () => {
       className='w-fit px-8 md:py-3 py-2 rounded-full bg-blue-800 text-white mx-auto flex text-sm md:text-md'
     >
       <a
-        href='/assets/resume.jpg'
+        href='/assets/My-CV.pdf'
         target='blank'
-        download='Fasina-Ayomikun-Resume.jpg'
+        download='Fasina-Ayomikun-Resume.pdf'
       >
         Download CV
       </a>

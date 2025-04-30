@@ -8,7 +8,7 @@
 }
 
 .background {
-  background: radial-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85)),
+  background: linear-gradient(to bottom, #030712 0%, #030712b6 50%, #030712 90%),
     url('/assets/hero.jpg') no-repeat;
   background-position: center;
   background-size: cover;
