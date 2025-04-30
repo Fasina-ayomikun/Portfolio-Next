@@ -55,11 +55,14 @@ const About = () => {
           </p>
           <hr className='border-dashed my-8' />
           <p className='text-gray-200 my-4'>
-            Hi, I'm Fasina Ayomikun, a frontend developer with over 4 years of
-            experience working with modern web technologies. I’m passionate
+            Hi, I'm Fasina Ayomikun, a frontend developer with close to 4 years
+            of experience working with modern web technologies. I’m passionate
             about continuous learning, content creation, and sharing knowledge
             through YouTube. As a tech influencer and a problem solver, I love
-            decoding bugs and building user-friendly experiences.{" "}
+            decoding bugs and building user-friendly experiences. I’m also the
+            creator of Tech with Deeyah — a personal tech brand where I simplify
+            frontend development, share real-life dev tips, and inspire others
+            to grow in code and in life.
           </p>
           <p className='text-gray-200 my-4'>
             <strong>Skills: </strong>

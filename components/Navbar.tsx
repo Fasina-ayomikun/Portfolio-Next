@@ -72,6 +72,13 @@ const Navbar = () => {
             pathname === "/projects" && "border-b-2 "
           }`}
         >
+          <Link href={"/services"}>Services</Link>
+        </li>
+        <li
+          className={`font-medium hover:border-b-2 border-blue-800 ${
+            pathname === "/projects" && "border-b-2 "
+          }`}
+        >
           <Link href={"/projects"}>Projects</Link>
         </li>
         <li
